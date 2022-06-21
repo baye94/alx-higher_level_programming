@@ -10,6 +10,7 @@ class Square:
     size.
 
     """
+    __size
 
     def __init__(self, size):
         """Initializes the size variable as a private

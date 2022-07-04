@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Geometry module.
-Author:Baye cheikh fall
-
+"""
+    Module containing the `BaseGeometry` class.
 """
 
 
 class BaseGeometry:
-    """An empty class"""
+    """A class.
+    """
     pass

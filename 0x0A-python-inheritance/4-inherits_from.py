@@ -1,17 +1,16 @@
 #!/usr/bin/python3
-"""Only sub class of.
-Author:Baye cheikh fall
-
+"""
+    Module containing the `inherits_from` function.
 """
 
-def inherits_from(obj, a_class):
-    """A function that returns True if the object is
-    an instance of a class that inherited (directly or indirectly)
-    from the specified class;
-    otherwise False.
 
+def inherits_from(obj, a_class):
+    """Check if `obj` is an instance of a class that has `a_class` as a
+    superclass but not an instance of `a_class` itself.
     Args:
-        obj(any): object of the class
-        a_class(type): describes the class
+        obj: An object.
+        a_class: A class.
+    Returns: True if `obj` is an instance of a subclass of `a_class`,
+    otherwise False.
     """
-    return isinstance(type(obj), a_class) and (type(obj) is not (a_class))
+    return (isinstance(obj, a_class) and (type(obj) is not a_class))

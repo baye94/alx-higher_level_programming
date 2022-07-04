@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Same class or inherit from
-Author: Kanneh
+Author:Baye cheikh fall
 
 """
 

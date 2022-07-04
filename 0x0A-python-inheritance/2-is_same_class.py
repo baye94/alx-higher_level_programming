@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Exact same object.
-Author: Kanneh
+Author:Baye cheikh fall
 
 """
 

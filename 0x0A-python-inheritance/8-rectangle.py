@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Integer validator
-Author: Kanneh
+Author:Baye cheikh fall
 
 """
 

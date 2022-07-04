@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Only sub class of.
-Author: Kanneh
+Author:Baye cheikh fall
 
 """
 

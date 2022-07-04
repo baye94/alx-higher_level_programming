@@ -1,30 +1,25 @@
 #!/usr/bin/python3
-"""Integer validator
-Author:Baye cheikh fall
-
+"""
+    Module containing the `BaseGeometry` class.
 """
 
 
 class BaseGeometry:
-    """An empty class"""
+    """A class.
+    """
 
     def area(self):
-        """Raises an exception because...
-        area is not implemented
-
-        """
+        """Raises an exception"""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """Validates the inputs: name and values
-
+        """Checks if value is an integer and if it is > 0.
         Args:
-            name(str) - input name as string
-            value(int): pararams validator
-
+            name (:obj:'str'): String.
+            value (int): An integer.
         """
-        if type(value) != int:
-            raise TypeError("{} must be an integer".format(name))
+        if type(value) is not int:
+            raise TypeError(name + " must be an integer")
+
         if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
-        return value
+            raise ValueError(name + " must be greater than 0")

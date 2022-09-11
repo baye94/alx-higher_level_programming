@@ -24,4 +24,3 @@ if __name__ == "__main__":
     print(', '.join(newList))
     c.close()
     serv.close()
-    

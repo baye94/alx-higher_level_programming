@@ -1,23 +1,19 @@
 #!/usr/bin/python3
-"""search an API"""
-
-import requests
-import sys
-url = "http://0.0.0.0:5000/search_user"
-
+'''task 8 script'''
 
 if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        search = {'q': '""'}
-    else:
-        search = {'q': sys.argv[1]}
-    request = requests.post(url, search)
+    import requests
+    import sys
+
+    data = {'q': sys.argv[1] if len(sys.argv) >= 2 else ""}
+    res = requests.post('http://0.0.0.0:5000/search_user', data=data)
+    text = res.text
+
     try:
-        search = request.json()
-    except ValueError:
-        print("Not a valid JSON")
-    else:
-        if hasattr(search, '__contains__') and len(search) < 1:
+        json = res.json()
+        if json.get('id', None) is None:
             print('No result')
         else:
-            print('[{}] {}'.format(search['id'], search['name']))
+            print('[{}] {}'.format(json['id'], json['name']))
+    except Exception:
+        print('Not a valid JSON')

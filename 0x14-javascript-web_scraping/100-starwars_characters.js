@@ -1,6 +1,8 @@
 #!/usr/bin/node
+
 const request = require('request');
-const url = 'https://swapi.co/api/films/' + process.argv[2];
+const url = 'https://swapi.co/api/films/' + process.argv[3] + '/';
+
 request(url, function (err, response, content) {
   if (!err) {
     const characters = JSON.parse(content).characters;

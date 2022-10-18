@@ -1,17 +1,17 @@
 #!/usr/bin/node
-// Characters of a Star Wars movie
+// File: 100-starwars_characters.js
+// By: Baye cheikh fall (SNDEV)
 const request = require('request');
-const url = `https://swapi-api.hbtn.io/api/films/${process.argv[2]}`;
-request(url, 'utf8', (error, response, body) => {
-  if (error) throw error;
-  else {
-    for (const t of JSON.parse(body).characters) {
-      request(t, 'utf8', (error, response, body) => {
-        if (error) throw error;
-        else {
+const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
+request(url, function (error, response, body) {
+  if (!error) {
+    const characters = JSON.parse(body).characters;
+    characters.forEach((character) => {
+      request(character, function (error, response, body) {
+        if (!error) {
           console.log(JSON.parse(body).name);
         }
       });
-    }
+    });
   }
 });

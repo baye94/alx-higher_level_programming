@@ -1,14 +1,12 @@
 #!/usr/bin/node
+// A script that reads and prints the content of a file
 
-/*
-Web Scraping
-this does some stuff and
-then prints it out
-*/
-const fs = require('fs');
-fs.readFile(process.argv[2], 'utf8', function (err, data) {
-  if (err) {
-    console.log(err);
+
+import { readFile } from 'fs';
+const file = process.argv[2];
+readFile(file, 'utf8', (error, data) => {
+  if (error) {
+    console.log(error);
   } else {
     console.log(data);
   }

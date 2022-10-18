@@ -1,6 +1,23 @@
 #!/usr/bin/node
-// A script that gets the contents of a webpage and stores it in a file
+/* script that gets the contents of a webpage and stores it in a file
+The first argument is the URL to request
+The second argument the file path to store the body response
+The file must be UTF-8 encoded
+You must use the module request */
 
 const fs = require('fs');
 const request = require('request');
-request(process.argv[2]).pipe(fs.createWriteStream(process.argv[3]));
+const url = process.argv[2];
+const file = process.argv[3];
+
+request(url, function (err, response, body) {
+  if (err) {
+    console.log(err);
+  } else {
+    fs.writeFile(file, body, function (err, body) {
+      if (err) {
+        console.log(err);
+      }
+    });
+  }
+});

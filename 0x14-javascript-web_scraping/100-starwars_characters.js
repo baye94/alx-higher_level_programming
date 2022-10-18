@@ -1,15 +1,14 @@
 #!/usr/bin/node
+
+const myArray = process.argv.slice(2);
 const request = require('request');
-const url = 'https://swapi.co/api/films/' + process.argv[2];
-request(url, function (err, response, content) {
-  if (!err) {
-    const characters = JSON.parse(content).characters;
-    characters.forEach((character) => {
-      request(character, function (err, response, content) {
-        if (!err) {
-          console.log(JSON.parse(content).name);
-        }
-      });
-    });
-  }
-});
+
+if (Number.isInteger(parseInt(myArray[0]))) {
+  request('http://swapi.co/api/films/' + myArray[0], function (error, response, body) {
+    if (error) console.error('error:', error);
+    JSON.parse(body).characters.forEach(link => request(link, (error, response, body) => {
+      if (error) console.error('error:', error);
+      console.log(JSON.parse(body).name);
+    }));
+  });
+}

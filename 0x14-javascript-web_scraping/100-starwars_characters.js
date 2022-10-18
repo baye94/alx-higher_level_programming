@@ -1,8 +1,6 @@
 #!/usr/bin/node
-// File: 100-starwars_characters.js
-// By: Baye cheikh fall (SNDEV)
 const request = require('request');
-const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
+const url = ('https://swapi-api.hbtn.io/api/films/' + process.argv[2]);
 request(url, function (error, response, body) {
   if (!error) {
     const characters = JSON.parse(body).characters;

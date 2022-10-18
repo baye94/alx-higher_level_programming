@@ -3,7 +3,7 @@
 // Display characters name in the same order of the list  “characters” in the /films/ response
 
 const request = require('request');
-const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[3];
+const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
 
 function printCharacters (characters, idx) {
   request(characters[idx], (err, res, body) => {
